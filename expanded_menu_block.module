@@ -1,0 +1,28 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function expanded_menu_block_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the expanded_menu_block module.
+    case 'help.page.expanded_menu_block':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides a new block type for menus with an option to expand all menu items.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function expanded_menu_block_theme() {
+  $theme = [];
+
+  return $theme;
+}

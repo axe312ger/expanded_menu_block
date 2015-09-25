@@ -1,0 +1,5 @@
+services:
+  menu.expanded_tree_manipulators:
+    class: Drupal\expanded_menu_block\ExpandedTreeManipulators
+    arguments: []
+

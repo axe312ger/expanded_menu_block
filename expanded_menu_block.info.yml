@@ -1,0 +1,6 @@
+name: Expanded Menu Block
+type: module
+description: Provides a new block type for menus with an option to expand all menu items.
+core: 8.x
+package: Other
+
