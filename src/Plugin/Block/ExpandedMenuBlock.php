@@ -45,6 +45,7 @@ class ExpandedMenuBlock extends SystemMenuBlock {
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
+    parent::blockSubmit($form, $form_state);
     $this->configuration['expand'] = $form_state->getValue('expand');
   }
 
