@@ -75,7 +75,7 @@ class ExpandedMenuBlock extends SystemMenuBlock {
     );
 
     if ($this->configuration['expand']) {
-      $manipulators[] = ['callable' => 'menu.expanded_tree_manipulators:expandChildItems'];
+      array_unshift($manipulators, ['callable' => 'menu.expanded_tree_manipulators:expandChildItems']);
     }
 
     $tree = $this->menuTree->transform($tree, $manipulators);
