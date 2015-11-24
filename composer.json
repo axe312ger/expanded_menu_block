@@ -1,0 +1,11 @@
+{
+    "name": "drupal/expanded_menu_block",
+    "description": "Provides a new block type for menus with an option to expand all menu items.",
+    "authors": [
+        {
+            "name": "Benedikt Rötsch",
+            "email": "info@benedikt-roetsch.de"
+        }
+    ],
+    "require": {}
+}
