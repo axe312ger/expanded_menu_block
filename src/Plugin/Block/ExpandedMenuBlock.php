@@ -65,7 +65,10 @@ class ExpandedMenuBlock extends SystemMenuBlock {
     // Hence this is a relative depth that we must convert to an actual
     // (absolute) depth, that may never exceed the maximum depth.
     if ($depth > 0) {
-      $parameters->setMaxDepth(min($level + $depth - 1, $this->menuTree->maxDepth()));
+      $maxDepth = $level + $depth - 1;
+      $parameters->setMaxDepth(min($maxDepth, $this->menuTree->maxDepth()));
+    } else {
+      $maxDepth = 0;
     }
 
     $tree = $this->menuTree->load($menu_name, $parameters);
@@ -75,7 +78,7 @@ class ExpandedMenuBlock extends SystemMenuBlock {
     );
 
     if ($this->configuration['expand']) {
-      array_unshift($manipulators, ['callable' => 'menu.expanded_tree_manipulators:expandChildItems']);
+      array_unshift($manipulators, ['callable' => 'menu.expanded_tree_manipulators:expandChildItems', 'args' => ['maxDepth' => $maxDepth]]);
     }
 
     $tree = $this->menuTree->transform($tree, $manipulators);
